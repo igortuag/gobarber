@@ -12,6 +12,8 @@
     "date-fns": "^2.14.0",
     "eslint-plugin-import": "^2.21.2",
     "express": "^4.17.1",
+    "pg": "^8.2.1",
+    "typeorm": "^0.2.25",
     "uuidv4": "^6.1.0"
   },
   "devDependencies": {
