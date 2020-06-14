@@ -1,6 +1,6 @@
-<h1 align="center">
-   <img alt="NextLevelWeek" title="#NextLevelWeek" src="./github-assets/banner.jpg" width=250 />
-</h1>
+<p align="center">
+    <img width="300" align="center" src=".github/gostack.svg">   
+</p>
 
 <h4 align="center"> 
 	🚧 GoBarber 1.0 🚀 em construção... 🚧
@@ -28,23 +28,15 @@
 </p>
 
 
-## 💻 Sobre o projeto
+## :rocket: Sobre o projeto
 
-✂ GoBarber - forma de conectar barbeiros às pessoas que precisam melhorar seu visual.
-
-Os profissionais poderão se cadastrar na plataforma web enviando:
-- nome da entidade, email e senha
-- e o endereço para que ele possa aparecer no mapa
-- além de selecionar seus horários de disponibilidade
-
-Os usuários terão acesso ao aplicativo móvel, onde poderão:
-- navegar pelo app para ver os profissionais cadastrados e datas de disponibilidade
-- entrar em contato com o profissional e/ou marcar um horario
-
-Projeto desenvolvido durante o **Bootcamp - Go Stack** oferecido pela [Rocketseat].
+<p>Esta é uma plataforma completa onde o cliente pode visualizar a agenda de barbeiros e agendar um horário, 
+e para barbeiros, permite gerenciar os horários marcados.</p> 
 
 
 ## 🎨 Layout
+
+<img src=".github/gobarber.png">
 
 O layout da aplicação está disponível no Figma:
 
@@ -62,14 +54,32 @@ O layout da aplicação está disponível no Figma:
 
 	🚧 GoBarber 1.0 🚀 em construção... 🚧
 
-## 🛠 Tecnologias
+## :computer: Tecnologias
 
-As seguintes ferramentas foram usadas na construção do projeto:
-
-- [Node.js][nodejs]
-- [React][reactjs]
-- [React Native][rn]
-- [TypeScript][typescript]
+Além das tecnologias abaixo, esta aplicação foi desenvolvida com as melhores práticas de desenvolvimento! 
+<p>:heart_eyes: <strong>TDD</strong> :sparkling_heart: Design patterns: <strong>SOLID</strong>, <strong>DDD</strong> e <strong>DRY</strong>, :balance_scale: estratégia de <strong>cache</strong> e :police_car: <strong>segurança</strong> no node.</p>
+    
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [Typescript](https://www.typescriptlang.org/)
+- [ESLint-Airbnb](https://eslint.org/), [Prettier](https://prettier.io/) e [EditorConfig](https://editorconfig.org/)
+- [Celebrate](https://github.com/arb/celebrate)
+- [Jest](https://jestjs.io/) 
+- [Multer](https://github.com/expressjs/multer)
+- [Datefns](https://date-fns.org/)
+- [Dotenv](https://github.com/motdotla/dotenv)
+- [Bcrypt.js](https://github.com/dcodeIO/bcrypt.js/)
+- [Jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+- [TypeORM](https://typeorm.io/#/)
+- [Handlebars](https://handlebarsjs.com/)
+- [Nodemailer](https://nodemailer.com/about/)
+- [Ioredis](https://github.com/luin/ioredis)
+- [Cors](https://github.com/expressjs/cors)
+- [Aws-sdk](https://github.com/aws/aws-sdk-js)
+- [Class-transformer](https://github.com/typestack/class-transformer)
+- [Rate-limiter-flexible](https://github.com/animir/node-rate-limiter-flexible)
+- [Tsyringe](https://github.com/microsoft/tsyringe)
+- [Uuidv4](https://github.com/thenativeweb/uuidv4)
 
 
 ## 🚀 Como rodar este projeto
@@ -83,30 +93,54 @@ Podemos considerar este projeto como sendo divido em três partes:
 
 ### Pré-requisitos
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js][nodejs]. 
-Além disto é bom ter um editor para trabalhar com o código como [VSCode][vscode]
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en/) v10.20 ou maior
+- [Yarn](https://yarnpkg.com/)
+- Uma instância de [PostgreSQL](https://www.postgresql.org/), [Mongodb](https://www.mongodb.com/) e [Redis](https://redis.io/) **
+
+** Ou [Docker](https://www.docker.com/) 
+
+## :books: Guia de instalação e execução
 
 ### 🎲 Rodando o Back End (servidor)
 
+<i>Antes de executar estes passos, você precisa ter uma instância dos bancos listados acima ou um Docker com as imagens e os databases e schemas criados.</i>
+
+- Clone o repositório ```git clone https://github.com/nathaliacristina20/gostack-gobarber-server.git```
+- Vá até o diretório ```cd gostack-gobarber-server```
+- Execute ```yarn``` para instalar as dependências
+- Copie o arquivo .env.example executando ```cp .env.example .env``` para linux ou mac e ```copy .env.example .env``` para windows
+- Abra o arquivo .env e preencha com suas variáveis de ambiente
+- Copie o arquivo de configuração do orm executando ```cp ormconfig.example.json ormconfig.json``` para linux ou mac e ```copy ormconfig.example.json ormconfig.json``` para windows
+- Abra o arquivo ormconfig.json e preencha com suas credenciais das instâncias dos bancos de dados
+- Execute ```yarn typeorm migration:run``` para rodar as migrations 
+- Execute ```yarn dev:server``` para rodar o servidor
+
+Você pode realizar requisições REST através do Insomnia
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=GoBarber&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fnathaliacristina20%2Fgostack-gobarber-server%2Fmaster%2Finsomnia.json)
+
+Caso deseje executar os testes unitários e de integração basta executar ```yarn test``` em seu terminal. Você poderá ver um relatório da cobertura acessando o arquivo ```coverage/lcov-report/index.html```.
+
+## :pencil: Como contribuir
+
+<b>Faça um fork deste repositório</b>
+
 ```bash
-# Clone este repositório
-$ git clone https://github.com/igortuag/gobarber
+# Clone o seu fork
+$ git clone url-do-seu-fork && cd gostack-gobarber-server
 
-# Acesse a pasta do projeto no terminal/cmd
-$ cd gobarber
+# Crie uma branch com sua feature ou correção de bugs
+$ git checkout -b minha-branch
 
-# Vá para a pasta server
-$ cd server
+# Faça o commit das suas alterações
+$ git commit -m 'feature/bugfix: minhas alterações'
 
-# Instale as dependências
-$ npm install
-
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
-
-# O servidor inciará na porta:3333 - acesse http://localhost:3333 
+# Faça o push para a sua branch
+$ git push origin minha-branch
 ```
+
+Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
 
 ## 📝 Licença
 
