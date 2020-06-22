@@ -1,10 +1,10 @@
 import React, { useRef, useCallback } from 'react';
 import {
   Image,
-  View,
   ScrollView,
   KeyboardAvoidingView,
   Platform,
+  View,
 } from 'react-native';
 
 import { Form } from '@unform/mobile';
@@ -18,7 +18,7 @@ import logoImg from '../../assets/logo.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import { Container, Title, BackToSign, BackToSignText } from './styles';
+import { Container, Title, BackToSignIn, BackToSignInText } from './styles';
 
 const SignUp: React.FC = () => {
   const navigation = useNavigation();
@@ -27,21 +27,20 @@ const SignUp: React.FC = () => {
   const handleSignIn = useCallback((data: object) => {
     console.log(data);
   }, []);
-
   return (
     <>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        keyboardVerticalOffset={Platform.select({ ios: 120, android: 500 })}
         enabled
       >
         <ScrollView
-          keyboardShouldPersistTaps="handled"
           contentContainerStyle={{ flex: 1 }}
+          keyboardShouldPersistTaps="handled"
         >
           <Container>
             <Image source={logoImg} />
-
             <View>
               <Title>Crie sua conta</Title>
             </View>
@@ -61,11 +60,10 @@ const SignUp: React.FC = () => {
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
-
-      <BackToSign onPress={() => navigation.goBack()}>
+      <BackToSignIn onPress={() => navigation.navigate('SignIn')}>
         <Icon name="arrow-left" size={20} color="#fff" />
-        <BackToSignText>Voltar para logon</BackToSignText>
-      </BackToSign>
+        <BackToSignInText>Voltar para login</BackToSignInText>
+      </BackToSignIn>
     </>
   );
 };

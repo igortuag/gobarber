@@ -28,13 +28,15 @@ const Input: React.FC<InputProps> = ({ name, icon, ...rest }) => {
         inputValueRef.current.value = value;
         inputElementRef.current.setNativeProps({ text: value });
       },
+      clearValue() {
+        inputValueRef.current.value = '';
+        inputElementRef.current.clear();
+      },
     });
   }, [fieldName, registerField]);
-
   return (
     <Container>
-      <Icon name={icon} size={28} color="#666360" />
-
+      <Icon name={icon} size={20} color="#666360" />
       <TextInput
         ref={inputElementRef}
         keyboardAppearance="dark"
