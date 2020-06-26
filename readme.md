@@ -99,6 +99,7 @@ Podemos considerar este projeto como sendo divido em três partes:
 - Uma instância de [PostgreSQL](https://www.postgresql.org/), [Mongodb](https://www.mongodb.com/) e [Redis](https://redis.io/) **
 
 ** Ou [Docker](https://www.docker.com/) 
+** Ou (Docker Compose)[https://docs.docker.com/compose/] - exemplo (aqui)[https://github.com/LuizFellype/gobarber/tree/master]
 
 ## :books: Guia de instalação e execução
 
@@ -106,13 +107,12 @@ Podemos considerar este projeto como sendo divido em três partes:
 
 <i>Antes de executar estes passos, você precisa ter uma instância dos bancos listados acima ou um Docker com as imagens e os databases e schemas criados.</i>
 
-- Clone o repositório ```git clone https://github.com/nathaliacristina20/gostack-gobarber-server.git```
-- Vá até o diretório ```cd gostack-gobarber-server```
+- Clone o repositório ```git clone https://github.com/igortuag/gobarber.git```
+- Vá até o diretório ```cd backend```
 - Execute ```yarn``` para instalar as dependências
-- Copie o arquivo .env.example executando ```cp .env.example .env``` para linux ou mac e ```copy .env.example .env``` para windows
+- Caso exista, Copie o arquivo .env.example executando ```cp .env.example .env``` para linux ou mac e ```copy .env.example .env``` para windows
 - Abra o arquivo .env e preencha com suas variáveis de ambiente
-- Copie o arquivo de configuração do orm executando ```cp ormconfig.example.json ormconfig.json``` para linux ou mac e ```copy ormconfig.example.json ormconfig.json``` para windows
-- Abra o arquivo ormconfig.json e preencha com suas credenciais das instâncias dos bancos de dados
+- Abra o arquivo `ormconfig.json` e preencha com suas credenciais das instâncias dos bancos de dados
 - Execute ```yarn typeorm migration:run``` para rodar as migrations 
 - Execute ```yarn dev:server``` para rodar o servidor
 
