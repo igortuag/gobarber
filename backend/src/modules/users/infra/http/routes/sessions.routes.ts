@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import AuthenticateUserService from '../../../../modules/appointments/services/AuthenticateUserService';
+import AuthenticateUserService from '@modules/users/appointments/services/AuthenticateUserService';
 
 const sessionsRouter = Router();
 
