@@ -1,7 +1,7 @@
 import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
-import User from '@modules/user/infra/typeorm/entities/User';
+import User from '@modules/users/infra/typeorm/entities/User';
 
 import authConfig from '@config/auth';
 
